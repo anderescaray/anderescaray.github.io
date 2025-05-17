@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f0b1b3fe1e09b54ee20b54c281c7595b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f0b1b3fe1e09b54ee20b54c281c7595b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f0b1b3fe1e09b54ee20b54c281c7595b = L.map(
+                "map_f0b1b3fe1e09b54ee20b54c281c7595b",
+                {
+                    center: [42.7, -1.6],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fb072f1e322b0f8655423fc873e59a62 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fb072f1e322b0f8655423fc873e59a62.addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+        function geo_json_132dd229981ff5617527de1a686bc5eb_styler(feature) {
+            switch(feature.properties.name) {
+                default:
+                    return {"color": "black", "fillColor": "#d3d3d3", "fillOpacity": 0.15, "weight": 1};
+            }
+        }
+        function geo_json_132dd229981ff5617527de1a686bc5eb_highlighter(feature) {
+            switch(feature.properties.name) {
+                default:
+                    return {"fillColor": "#999999", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_132dd229981ff5617527de1a686bc5eb_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_132dd229981ff5617527de1a686bc5eb.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_132dd229981ff5617527de1a686bc5eb_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_132dd229981ff5617527de1a686bc5eb = L.geoJson(null, {
+                onEachFeature: geo_json_132dd229981ff5617527de1a686bc5eb_onEachFeature,
+            
+                style: geo_json_132dd229981ff5617527de1a686bc5eb_styler,
+            ...{
+}
+        });
+
+        function geo_json_132dd229981ff5617527de1a686bc5eb_add (data) {
+            geo_json_132dd229981ff5617527de1a686bc5eb
+                .addData(data);
+        }
+            geo_json_132dd229981ff5617527de1a686bc5eb_add({"crs": {"properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}, "type": "name"}, "features": [{"geometry": {"coordinates": [[[[-2.52, 42.61], [-2.52, 42.625], [-2.51, 42.635], [-2.49, 42.635], [-2.455, 42.67], [-2.415, 42.685], [-2.375, 42.675], [-2.355, 42.655], [-2.33, 42.665], [-2.345, 42.73], [-2.325, 42.76], [-2.29, 42.76], [-2.3, 42.775], [-2.3, 42.795], [-2.29, 42.805], [-2.29, 42.82], [-2.255, 42.845], [-2.26, 42.875], [-2.275, 42.895], [-2.26, 42.91], [-2.25, 42.945], [-2.235, 42.95], [-2.22, 42.97], [-2.185, 42.97], [-2.17, 42.955], [-2.125, 42.96], [-2.1, 42.995], [-2.06, 42.995], [-2.06, 43.04], [-2.04, 43.055], [-2.04, 43.075], [-2.025, 43.09], [-2, 43.095], [-1.935, 43.135], [-1.945, 43.18], [-1.93, 43.24], [-1.895, 43.24], [-1.885, 43.25], [-1.845, 43.245], [-1.815, 43.26], [-1.815, 43.28], [-1.795, 43.305], [-1.735, 43.315], [-1.71, 43.33], [-1.65, 43.335], [-1.615, 43.325], [-1.605, 43.315], [-1.61, 43.285], [-1.605, 43.275], [-1.58, 43.275], [-1.58, 43.305], [-1.545, 43.315], [-1.505, 43.315], [-1.46, 43.29], [-1.435, 43.285], [-1.41, 43.295], [-1.38, 43.28], [-1.36, 43.26], [-1.355, 43.23], [-1.365, 43.205], [-1.365, 43.175], [-1.385, 43.165], [-1.38, 43.155], [-1.395, 43.12], [-1.445, 43.085], [-1.42, 43.06], [-1.365, 43.05], [-1.365, 43.1], [-1.345, 43.125], [-1.325, 43.135], [-1.265, 43.14], [-1.25, 43.125], [-1.25, 43.11], [-1.28, 43.08], [-1.255, 43.065], [-1.245, 43.065], [-1.24, 43.075], [-1.22, 43.075], [-1.18, 43.055], [-1.175, 43.06], [-1.155, 43.055], [-1.135, 43.04], [-1.105, 43.045], [-1.09, 43.03], [-1.07, 43.03], [-1.06, 43.015], [-1.005, 43.015], [-0.99, 43.005], [-0.985, 42.99], [-0.95, 42.975], [-0.9, 42.985], [-0.865, 42.97], [-0.845, 42.975], [-0.82, 42.97], [-0.795, 42.985], [-0.755, 42.99], [-0.735, 42.98], [-0.705, 42.935], [-0.705, 42.905], [-0.715, 42.9], [-0.765, 42.905], [-0.795, 42.89], [-0.8, 42.86], [-0.835, 42.835], [-0.83, 42.775], [-0.855, 42.745], [-0.88, 42.74], [-0.89, 42.725], [-0.92, 42.72], [-0.93, 42.7], [-0.945, 42.69], [-1.015, 42.68], [-1.01, 42.67], [-1.02, 42.66], [-1.02, 42.64], [-1.04, 42.625], [-1.09, 42.63], [-1.135, 42.625], [-1.145, 42.58], [-1.185, 42.565], [-1.18, 42.56], [-1.185, 42.535], [-1.225, 42.52], [-1.26, 42.53], [-1.27, 42.515], [-1.255, 42.505], [-1.255, 42.47], [-1.275, 42.44], [-1.31, 42.43], [-1.32, 42.415], [-1.33, 42.39], [-1.31, 42.37], [-1.31, 42.345], [-1.32, 42.33], [-1.34, 42.325], [-1.365, 42.3], [-1.38, 42.24], [-1.395, 42.215], [-1.375, 42.2], [-1.37, 42.185], [-1.375, 42.135], [-1.35, 42.12], [-1.34, 42.095], [-1.31, 42.095], [-1.29, 42.08], [-1.285, 42.035], [-1.335, 41.995], [-1.35, 41.975], [-1.365, 41.93], [-1.39, 41.92], [-1.395, 41.905], [-1.41, 41.895], [-1.46, 41.895], [-1.475, 41.905], [-1.49, 41.905], [-1.515, 41.89], [-1.575, 41.895], [-1.61, 41.91], [-1.625, 41.935], [-1.72, 41.935], [-1.745, 41.945], [-1.77, 41.975], [-1.78, 41.97], [-1.845, 41.975], [-1.85, 41.985], [-1.865, 41.985], [-1.89, 42.005], [-1.91, 42.01], [-1.92, 42.02], [-1.93, 42.065], [-1.91, 42.1], [-1.88, 42.12], [-1.84, 42.17], [-1.815, 42.175], [-1.79, 42.16], [-1.775, 42.17], [-1.72, 42.165], [-1.72, 42.185], [-1.73, 42.195], [-1.74, 42.19], [-1.76, 42.2], [-1.785, 42.195], [-1.79, 42.205], [-1.825, 42.21], [-1.84, 42.23], [-1.885, 42.235], [-1.895, 42.245], [-1.895, 42.27], [-1.92, 42.28], [-1.95, 42.315], [-1.975, 42.315], [-1.995, 42.34], [-2.03, 42.345], [-2.06, 42.325], [-2.095, 42.325], [-2.11, 42.34], [-2.11, 42.37], [-2.135, 42.39], [-2.135, 42.4], [-2.15, 42.39], [-2.19, 42.39], [-2.195, 42.4], [-2.225, 42.395], [-2.26, 42.425], [-2.28, 42.425], [-2.295, 42.44], [-2.35, 42.43], [-2.38, 42.45], [-2.415, 42.455], [-2.445, 42.495], [-2.44, 42.525], [-2.42, 42.535], [-2.415, 42.58], [-2.44, 42.55], [-2.455, 42.545], [-2.48, 42.57], [-2.5, 42.565], [-2.51, 42.575], [-2.52, 42.61]]], [[[-1.205, 42.425], [-1.19, 42.445], [-1.17, 42.45], [-1.165, 42.46], [-1.145, 42.46], [-1.11, 42.505], [-1.08, 42.505], [-1.04, 42.465], [-1.03, 42.445], [-1.045, 42.415], [-1.13, 42.425], [-1.135, 42.405], [-1.15, 42.39], [-1.18, 42.38], [-1.205, 42.39], [-1.21, 42.405], [-1.2, 42.42], [-1.205, 42.425]]]], "type": "MultiPolygon"}, "properties": {"name": "comunidad_foral_de_navarra"}, "type": "Feature"}], "name": "comunidad_foral_de_navarra", "type": "FeatureCollection"});
+
+        
+    
+            geo_json_132dd229981ff5617527de1a686bc5eb.addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var marker_8fc34dffca1145d9d449176642892628 = L.marker(
+                [42.89528, -2.16889],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_2a80f11228b0b55a7b1a8430b7c5cada = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e549bb467f4167f9fa2fc01116672f52 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed11b91f409cfe0c55cf1f781e89fb94 = $(`<div id="html_ed11b91f409cfe0c55cf1f781e89fb94" style="width: 100.0%; height: 100.0%;">Altsasu / Alsasua: 1 ambulancia</div>`)[0];
+                popup_e549bb467f4167f9fa2fc01116672f52.setContent(html_ed11b91f409cfe0c55cf1f781e89fb94);
+            
+        
+
+        marker_8fc34dffca1145d9d449176642892628.bindPopup(popup_e549bb467f4167f9fa2fc01116672f52)
+        ;
+
+        
+    
+    
+                marker_8fc34dffca1145d9d449176642892628.setIcon(icon_2a80f11228b0b55a7b1a8430b7c5cada);
+            
+    
+            var marker_ec0a4568b2e33c53dc4f6d3bca69c5b4 = L.marker(
+                [42.377187, -1.944092],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_9000dda49465ae33bb99c504bb660f3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64f4b39a6e517840b2f308c62c793e8e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_38c2247eeece7b6c61e51bb0938fdaca = $(`<div id="html_38c2247eeece7b6c61e51bb0938fdaca" style="width: 100.0%; height: 100.0%;">Andosilla: 1 ambulancia</div>`)[0];
+                popup_64f4b39a6e517840b2f308c62c793e8e.setContent(html_38c2247eeece7b6c61e51bb0938fdaca);
+            
+        
+
+        marker_ec0a4568b2e33c53dc4f6d3bca69c5b4.bindPopup(popup_64f4b39a6e517840b2f308c62c793e8e)
+        ;
+
+        
+    
+    
+                marker_ec0a4568b2e33c53dc4f6d3bca69c5b4.setIcon(icon_9000dda49465ae33bb99c504bb660f3a);
+            
+    
+            var marker_551e84bdb0ffab19fcbe7e385fe071dd = L.marker(
+                [42.21812, -1.692295],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_bfd132773f357804b3fa3265f36593e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd0c8868e92143deb7c8bae30838a3b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3b4349f2fcc6307c34af1cf04ab83ed = $(`<div id="html_e3b4349f2fcc6307c34af1cf04ab83ed" style="width: 100.0%; height: 100.0%;">Cadreita: 1 ambulancia</div>`)[0];
+                popup_cd0c8868e92143deb7c8bae30838a3b7.setContent(html_e3b4349f2fcc6307c34af1cf04ab83ed);
+            
+        
+
+        marker_551e84bdb0ffab19fcbe7e385fe071dd.bindPopup(popup_cd0c8868e92143deb7c8bae30838a3b7)
+        ;
+
+        
+    
+    
+                marker_551e84bdb0ffab19fcbe7e385fe071dd.setIcon(icon_bfd132773f357804b3fa3265f36593e3);
+            
+    
+            var marker_a8dbb85df3d9cd5086f3eeafc9803a67 = L.marker(
+                [42.079212, -1.805798],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_92702466ad3ac5772c5f068189edc516 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30a43eb36ca93425ece74b0023891b1e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1e7bb1ab6c1b5544f9149f9063b45cd4 = $(`<div id="html_1e7bb1ab6c1b5544f9149f9063b45cd4" style="width: 100.0%; height: 100.0%;">Cintruénigo: 1 ambulancia</div>`)[0];
+                popup_30a43eb36ca93425ece74b0023891b1e.setContent(html_1e7bb1ab6c1b5544f9149f9063b45cd4);
+            
+        
+
+        marker_a8dbb85df3d9cd5086f3eeafc9803a67.bindPopup(popup_30a43eb36ca93425ece74b0023891b1e)
+        ;
+
+        
+    
+    
+                marker_a8dbb85df3d9cd5086f3eeafc9803a67.setIcon(icon_92702466ad3ac5772c5f068189edc516);
+            
+    
+            var marker_c3b586aa6b6f8b825e47da9aad0a367f = L.marker(
+                [42.824961, -1.552374],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_268604e83faee22824fcfb3b1d17816c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_65c0351daa64c6357f2fe19ac387caf4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24c655b09d8a74ce97c9fa3f63b1253b = $(`<div id="html_24c655b09d8a74ce97c9fa3f63b1253b" style="width: 100.0%; height: 100.0%;">Valle de Egüés / Eguesibar: 1 ambulancia</div>`)[0];
+                popup_65c0351daa64c6357f2fe19ac387caf4.setContent(html_24c655b09d8a74ce97c9fa3f63b1253b);
+            
+        
+
+        marker_c3b586aa6b6f8b825e47da9aad0a367f.bindPopup(popup_65c0351daa64c6357f2fe19ac387caf4)
+        ;
+
+        
+    
+    
+                marker_c3b586aa6b6f8b825e47da9aad0a367f.setIcon(icon_268604e83faee22824fcfb3b1d17816c);
+            
+    
+            var marker_8720cc50111216a97b973235b591dabb = L.marker(
+                [42.66889, -2.03083],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_251e93b6c896aa61e8060cbdc208b7e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21707eca561c601430b21215db8b2443 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0d47fb541e6d40bc74021db5695de7f6 = $(`<div id="html_0d47fb541e6d40bc74021db5695de7f6" style="width: 100.0%; height: 100.0%;">Estella-Lizarra: 1 ambulancia</div>`)[0];
+                popup_21707eca561c601430b21215db8b2443.setContent(html_0d47fb541e6d40bc74021db5695de7f6);
+            
+        
+
+        marker_8720cc50111216a97b973235b591dabb.bindPopup(popup_21707eca561c601430b21215db8b2443)
+        ;
+
+        
+    
+    
+                marker_8720cc50111216a97b973235b591dabb.setIcon(icon_251e93b6c896aa61e8060cbdc208b7e1);
+            
+    
+            var marker_30d71b786bef5309737c393fbde59ddf = L.marker(
+                [42.618691, -1.276573],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_e335c80461e1ee407a227496632c2de9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b5856c7acc7f85b566b6a1fa14634457 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fda53d575a9790d0d518423758c39dc0 = $(`<div id="html_fda53d575a9790d0d518423758c39dc0" style="width: 100.0%; height: 100.0%;">Liédena: 1 ambulancia</div>`)[0];
+                popup_b5856c7acc7f85b566b6a1fa14634457.setContent(html_fda53d575a9790d0d518423758c39dc0);
+            
+        
+
+        marker_30d71b786bef5309737c393fbde59ddf.bindPopup(popup_b5856c7acc7f85b566b6a1fa14634457)
+        ;
+
+        
+    
+    
+                marker_30d71b786bef5309737c393fbde59ddf.setIcon(icon_e335c80461e1ee407a227496632c2de9);
+            
+    
+            var marker_4e864cb66d2d2faa003fc40aea017fa8 = L.marker(
+                [42.81687, -1.64323],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_e96958be410440438c459b10cb9d9acf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_80e0ea6a7d80793b3eb9ed60266a93f8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c0127142d489349e65a91c3f6ddc056 = $(`<div id="html_5c0127142d489349e65a91c3f6ddc056" style="width: 100.0%; height: 100.0%;">Pamplona / Iruña: 2 ambulancias</div>`)[0];
+                popup_80e0ea6a7d80793b3eb9ed60266a93f8.setContent(html_5c0127142d489349e65a91c3f6ddc056);
+            
+        
+
+        marker_4e864cb66d2d2faa003fc40aea017fa8.bindPopup(popup_80e0ea6a7d80793b3eb9ed60266a93f8)
+        ;
+
+        
+    
+    
+                marker_4e864cb66d2d2faa003fc40aea017fa8.setIcon(icon_e96958be410440438c459b10cb9d9acf);
+            
+    
+            var marker_b769aa2b00665be27ce5d3de096b093b = L.marker(
+                [41.99764, -1.51398],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_3e30acea916de1b6dc2eb689838983c3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32538d6f83a34b60c71cf3afccd064a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1e1fdf1ceb135c759913c92204a13765 = $(`<div id="html_1e1fdf1ceb135c759913c92204a13765" style="width: 100.0%; height: 100.0%;">Ribaforada: 1 ambulancia</div>`)[0];
+                popup_32538d6f83a34b60c71cf3afccd064a4.setContent(html_1e1fdf1ceb135c759913c92204a13765);
+            
+        
+
+        marker_b769aa2b00665be27ce5d3de096b093b.bindPopup(popup_32538d6f83a34b60c71cf3afccd064a4)
+        ;
+
+        
+    
+    
+                marker_b769aa2b00665be27ce5d3de096b093b.setIcon(icon_3e30acea916de1b6dc2eb689838983c3);
+            
+    
+            var marker_f92c112fec23c51d2a17d802a821551f = L.marker(
+                [43.132602, -1.671706],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_9cf6d8c4e83082cb71779217831cca19 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_253fe3cb344986cf016699119e42d926 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39603caafe67a3935f3a0c1aa5f6bdac = $(`<div id="html_39603caafe67a3935f3a0c1aa5f6bdac" style="width: 100.0%; height: 100.0%;">Doneztebe / Santesteban: 1 ambulancia</div>`)[0];
+                popup_253fe3cb344986cf016699119e42d926.setContent(html_39603caafe67a3935f3a0c1aa5f6bdac);
+            
+        
+
+        marker_f92c112fec23c51d2a17d802a821551f.bindPopup(popup_253fe3cb344986cf016699119e42d926)
+        ;
+
+        
+    
+    
+                marker_f92c112fec23c51d2a17d802a821551f.setIcon(icon_9cf6d8c4e83082cb71779217831cca19);
+            
+    
+            var marker_a9667d876db6c6b0a3f2058de698dd8c = L.marker(
+                [42.061369, -1.604575],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_729386ff19af8062087714565d27c1c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b617aedf691b85c711aaf78edb64c393 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5498efae918ee718ccb64b77c651fb13 = $(`<div id="html_5498efae918ee718ccb64b77c651fb13" style="width: 100.0%; height: 100.0%;">Tudela: 1 ambulancia</div>`)[0];
+                popup_b617aedf691b85c711aaf78edb64c393.setContent(html_5498efae918ee718ccb64b77c651fb13);
+            
+        
+
+        marker_a9667d876db6c6b0a3f2058de698dd8c.bindPopup(popup_b617aedf691b85c711aaf78edb64c393)
+        ;
+
+        
+    
+    
+                marker_a9667d876db6c6b0a3f2058de698dd8c.setIcon(icon_729386ff19af8062087714565d27c1c1);
+            
+    
+            var marker_d6c9ff2fe7d1ee8262e3343907d0bd54 = L.marker(
+                [42.525401, -1.675445],
+                {
+}
+            ).addTo(map_f0b1b3fe1e09b54ee20b54c281c7595b);
+        
+    
+            var icon_fbd336d18c2cdd11ae4a74880ff7a5d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "ambulance",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c48f807a330e41dff2f265fd56fe0f6a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_455e9f899bc631eb3d98a427a04e18fc = $(`<div id="html_455e9f899bc631eb3d98a427a04e18fc" style="width: 100.0%; height: 100.0%;">Tafalla: 1 ambulancia</div>`)[0];
+                popup_c48f807a330e41dff2f265fd56fe0f6a.setContent(html_455e9f899bc631eb3d98a427a04e18fc);
+            
+        
+
+        marker_d6c9ff2fe7d1ee8262e3343907d0bd54.bindPopup(popup_c48f807a330e41dff2f265fd56fe0f6a)
+        ;
+
+        
+    
+    
+                marker_d6c9ff2fe7d1ee8262e3343907d0bd54.setIcon(icon_fbd336d18c2cdd11ae4a74880ff7a5d4);
+            
+</script>
+</html>
